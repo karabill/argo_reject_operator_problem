@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  name: myworkflow
+  namespace: test-workflow
+spec:
+  entrypoint: start
+  templates:
+  - name: start
+    container:
+      args:
+      - "echo 'it should not run'"
+      command:
+      - /bin/sh
+      - -c
+      image: alpine:3.7

@@ -1,0 +1,1 @@
+This go program can be used to create a ValidatingWebhookConfiguration. The webhook will reject all pods.
