@@ -6,7 +6,7 @@ kind create cluster --name mytest --wait 5m --image "kindest/node:v1.16.15@sha25
 
 # Install argo
 kubectl create ns argo
-kubectl apply -n argo -f yamls/install-argo.yaml
+kubectl apply -n argo -f yamls/install-argo.yaml --validate=false
 
 # Install webhook
 docker build -t mywebhook:1.0.0 -f deny-all-webhook/Dockerfile deny-all-webhook
